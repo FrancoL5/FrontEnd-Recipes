@@ -5,8 +5,8 @@ Functionalities are the same
 
 ## Current Build
 Im using the followings libraries
-    - Typescript
-    - React
-    - React Router
-    - Chakra
-    - Vite
+- Typescript
+- React
+- React Router
+- Chakra
+- Vite
