@@ -4,13 +4,20 @@ import { ChakraProvider } from "@chakra-ui/react"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import { RootRouter } from "./routes/root.router.tsx"
 import { NotFound } from "./notFound.tsx"
+import App from "./App.tsx"
+import { theme } from "./utils/theme.ts"
 const router = createBrowserRouter([
-    { path: "/", element: <RootRouter />, errorElement: <NotFound /> },
+    {
+        path: "/",
+        element: <RootRouter />,
+        errorElement: <NotFound />,
+        children: [{ index: true, element: <App></App> }],
+    },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
             <RouterProvider router={router} />
         </ChakraProvider>
     </React.StrictMode>
