@@ -1,4 +1,4 @@
-import { Flex, Stack } from "@chakra-ui/react"
+import { Stack } from "@chakra-ui/react"
 
 export function MainPage() {
     return (

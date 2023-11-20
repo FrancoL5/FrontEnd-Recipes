@@ -6,12 +6,16 @@ import { RootRouter } from "./routes/root.router.tsx"
 import { NotFound } from "./notFound.tsx"
 import App from "./App.tsx"
 import { theme } from "./utils/theme.ts"
+import { MyBooks } from "./routes/myBooks.router.tsx"
 const router = createBrowserRouter([
     {
         path: "/",
         element: <RootRouter />,
         errorElement: <NotFound />,
-        children: [{ index: true, element: <App></App> }],
+        children: [
+            { index: true, element: <App></App> },
+            { path: "myBooks", element: <MyBooks></MyBooks> },
+        ],
     },
 ])
 
