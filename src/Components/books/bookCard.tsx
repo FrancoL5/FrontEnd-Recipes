@@ -1,12 +1,39 @@
-import { Card, CardBody, CardHeader, Heading } from "@chakra-ui/react"
+import {
+    Card,
+    CardBody,
+    CardHeader,
+    Flex,
+    Heading,
+    IconButton,
+} from "@chakra-ui/react"
 import { Item } from "../../interfaces/volumens.interface"
 import { ResumeText } from "../../utils/resumeText"
+import { MenuActionsBooks } from "./menuActions"
+import { FiBookmark } from "react-icons/fi"
 
 export function BookCard({ book }: { book: Item }) {
     return (
         <Card variant="outline" marginInline="5">
-            <CardHeader>
-                <Heading size="md">{book.volumeInfo.title}</Heading>
+            <CardHeader pb={1}>
+                <Flex justifyContent="space-between" alignItems="center">
+                    <Heading
+                        size="md"
+                        display="flex"
+                        alignItems="center"
+                        gap="0.5rem"
+                    >
+                        <IconButton
+                            size="lg"
+                            aria-label="readIt"
+                            variant="ghost"
+                            isRound
+                        >
+                            <FiBookmark></FiBookmark>
+                        </IconButton>
+                        {book.volumeInfo.title}
+                    </Heading>
+                    <MenuActionsBooks book={book}></MenuActionsBooks>
+                </Flex>
             </CardHeader>
             <CardBody>
                 <ResumeText>{book.volumeInfo.description}</ResumeText>

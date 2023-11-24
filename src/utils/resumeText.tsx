@@ -1,4 +1,4 @@
-import { Button, Collapse, IconButton } from "@chakra-ui/react"
+import { Box, Button, Collapse, Flex, IconButton } from "@chakra-ui/react"
 import { useState } from "react"
 import { FiArrowDown, FiArrowUp } from "react-icons/fi"
 
@@ -11,6 +11,7 @@ export function ResumeText({ children }: { children: string }) {
             </Collapse>
             <IconButton
                 variant={"outline"}
+                mt={3}
                 colorScheme="teal"
                 onClick={() => setOpen((prev) => !prev)}
                 aria-label="Open Text"
