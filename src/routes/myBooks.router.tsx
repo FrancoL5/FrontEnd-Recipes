@@ -12,7 +12,7 @@ export function MyBooks() {
         findByText("").then((data) => setBooks(data))
     }, [])
     return (
-        <Stack w="100%" alignItems="center" pt="5">
+        <Stack alignItems="center" pt="5">
             <Heading size="lg">Mis Libros</Heading>
             <SimpleGrid columns={{  md: 1, lg: 2 }} spacing="1rem" >
                 {books?.items.map((book, i) => (

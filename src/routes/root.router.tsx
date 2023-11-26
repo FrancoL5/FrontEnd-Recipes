@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom"
 import { NavBar } from "../Components/navbar/navbar"
-import { Flex } from "@chakra-ui/react"
+import { Flex, Stack } from "@chakra-ui/react"
 
 export function RootRouter() {
     return (
-        <Flex>
+        <Stack direction={["column", "row"]}>
             <NavBar></NavBar>
             <Outlet></Outlet>
-        </Flex>
+        </Stack>
     )
 }

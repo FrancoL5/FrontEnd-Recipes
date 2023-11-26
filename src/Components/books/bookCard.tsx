@@ -15,12 +15,16 @@ export function BookCard({ book }: { book: Item }) {
     return (
         <Card variant="outline" marginInline="5">
             <CardHeader pb={1}>
-                <Flex justifyContent="space-between" alignItems="center">
+                <Flex
+                    justifyContent="space-between"
+                    alignItems="center"
+                >
                     <Heading
-                        size="md"
+                        size={["sm", "md"]}
                         display="flex"
                         alignItems="center"
-                        gap="0.5rem"
+                        // gap="0.5rem"
+                        // flexWrap="wrap"
                     >
                         <IconButton
                             size="lg"

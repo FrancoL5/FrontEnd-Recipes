@@ -14,21 +14,34 @@ export function NavBar() {
     })
 
     return (
-        <Box
-            bg="teal"
-            p="5"
-            h="98dvh"
-            mt="1dvh"
-            borderRadius="lg"
-            position="sticky"
-            top="2"
-        >
-            <Stack>
-                <Button onClick={() => setOpenCollapse((prev) => !prev)}>
+        <Box>
+            <Stack
+                direction={["row", "column"]}
+                bg="teal"
+                p="5"
+                h="100%"
+                maxH="100dvh"
+                alignItems="center"
+                // w="40dvw"
+                // mt="1dvh"
+                borderRadius="lg"
+                position="sticky"
+                top="0"
+                // flex={1}
+            >
+                <Button
+                    size={["sm", "md"]}
+                    onClick={() => setOpenCollapse((prev) => !prev)}
+                >
                     {!openCollapse ? "Abrir" : "Cerrar"}
                 </Button>
                 <Collapse in={openCollapse} animateOpacity>
-                    <Stack spacing={10} pt="2">
+                    <Stack
+                        direction={["row", "column"]}
+                        alignItems="center"
+                        spacing={10}
+                        pt="2"
+                    >
                         <Button
                             onClick={() => navigate("/")}
                             {...style}
