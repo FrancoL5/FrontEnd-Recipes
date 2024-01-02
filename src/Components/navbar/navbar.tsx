@@ -14,54 +14,53 @@ export function NavBar() {
     })
 
     return (
-        <Box>
-            <Stack
-                direction={["row", "column"]}
-                bg="teal"
-                p="5"
-                h="100%"
-                maxH="100dvh"
-                alignItems="center"
-                // w="40dvw"
-                // mt="1dvh"
-                borderRadius="lg"
-                position="sticky"
-                top="0"
-                // flex={1}
+        <Stack
+            direction={["row", "column"]}
+            bg="teal"
+            p="5"
+            // h="100%"
+            h={["100%", "100dvh"]}
+            alignItems="center"
+            // w="40dvw"
+            // mt="1dvh"
+            borderRadius="lg"
+            position={["relative", "sticky"]}
+            top="0"
+            // flex={1}
+        >
+            <Button
+                display={["none", "block"]}
+                size={["sm", "md"]}
+                onClick={() => setOpenCollapse((prev) => !prev)}
             >
-                <Button
-                    size={["sm", "md"]}
-                    onClick={() => setOpenCollapse((prev) => !prev)}
+                {!openCollapse ? "Abrir" : "Cerrar"}
+            </Button>
+            <Collapse in={openCollapse} animateOpacity>
+                <Stack
+                    direction={["row", "column"]}
+                    alignItems="center"
+                    spacing={10}
+                    pt="2"
                 >
-                    {!openCollapse ? "Abrir" : "Cerrar"}
-                </Button>
-                <Collapse in={openCollapse} animateOpacity>
-                    <Stack
-                        direction={["row", "column"]}
-                        alignItems="center"
-                        spacing={10}
-                        pt="2"
+                    <Button
+                        onClick={() => navigate("/")}
+                        {...style}
+                        leftIcon={<FiMenu></FiMenu>}
                     >
-                        <Button
-                            onClick={() => navigate("/")}
-                            {...style}
-                            leftIcon={<FiMenu></FiMenu>}
-                        >
-                            Inicio
-                        </Button>
-                        <Button
-                            onClick={() => navigate("/myBooks")}
-                            {...style}
-                            leftIcon={<FiBookOpen></FiBookOpen>}
-                        >
-                            Mis Libros
-                        </Button>
-                        <Button {...style} leftIcon={<FiSearch></FiSearch>}>
-                            Buscar
-                        </Button>
-                    </Stack>
-                </Collapse>
-            </Stack>
-        </Box>
+                        Inicio
+                    </Button>
+                    <Button
+                        onClick={() => navigate("/myBooks")}
+                        {...style}
+                        leftIcon={<FiBookOpen></FiBookOpen>}
+                    >
+                        Mis Libros
+                    </Button>
+                    <Button {...style} leftIcon={<FiSearch></FiSearch>}>
+                        Buscar
+                    </Button>
+                </Stack>
+            </Collapse>
+        </Stack>
     )
 }
