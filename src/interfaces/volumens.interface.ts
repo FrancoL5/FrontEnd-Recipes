@@ -12,6 +12,7 @@ export interface Item {
     volumeInfo: VolumeInfo;
     saleInfo:   SaleInfo;
     accessInfo: AccessInfo;
+    marked?: boolean
     searchInfo: SearchInfo;
 }
 

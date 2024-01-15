@@ -7,6 +7,8 @@ import { NotFound } from "./notFound.tsx"
 import App from "./App.tsx"
 import { theme } from "./utils/theme.ts"
 import { MyBooks } from "./routes/myBooks.router.tsx"
+import { Provider } from "react-redux"
+import { store } from "./app/store.ts"
 const router = createBrowserRouter([
     {
         path: "/",
@@ -21,8 +23,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <ChakraProvider theme={theme}>
-            <RouterProvider router={router} />
-        </ChakraProvider>
+        <Provider store={store}>
+            <ChakraProvider theme={theme}>
+                <RouterProvider router={router} />
+            </ChakraProvider>
+        </Provider>
     </React.StrictMode>
 )

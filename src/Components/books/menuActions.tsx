@@ -12,16 +12,13 @@ import { Item } from "../../interfaces/volumens.interface"
 
 export function MenuActionsBooks({ book }: { book: Item }) {
     return (
-        <Menu>
-            <MenuButton  as={Button} variant="ghost">
-                <IconButton
-                    size="lg"
-                    variant="ghost"
-                    colorScheme="teal"
-                    aria-label="Menu"
-                >
+        <Menu >
+            <MenuButton  as={Button}
+            size="lg"
+            variant="ghost"
+            colorScheme="teal"
+            aria-label="Menu">
                 <FiMenu></FiMenu>
-                </IconButton>
             </MenuButton>
             <MenuList>
                 <MenuItem> Buscar en google</MenuItem>
