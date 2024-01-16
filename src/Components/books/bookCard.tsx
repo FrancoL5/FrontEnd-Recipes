@@ -18,7 +18,7 @@ export function BookCard({ book, marked }: { book: Item; marked?: boolean }) {
     return (
         <Card variant="outline" marginInline="5" h="fit-content">
             <CardHeader paddingX={0} paddingY={1}>
-                <Flex gap={4}>
+                <Flex gap={4} justifyContent="space-between" alignItems="center">
                     <IconButton
                         size="lg"
                         aria-label="readIt"
