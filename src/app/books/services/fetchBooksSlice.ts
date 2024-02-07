@@ -15,7 +15,7 @@ export const fetchBySearchBooks = createAsyncThunk<Volumens, string>(
         // oclc: Muestra resultados en los que el texto que sigue a esta palabra clave es el número del Centro de bibliotecas en línea de la computadora.
 
         const response = await fetch(
-            `https://www.googleapis.com/books/v1/volumes?q=${search}&key=`
+            `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${import.meta.env.VITE_API_KEY}`
         )
         const data = await response.json()
         if (response.status < 200 || response.status >= 300) {
